@@ -110,7 +110,7 @@ public class Main {
 
         questions.add(new Question("What is 5 + 8 * 4 ? \n(Choose one letter)", new String[]{"40", "52", "37"}, "c",
                 QuestionType.SINGLE_CHOICE));
-        questions.add(new Question("What is 5 / 0 ? \n(Choose multiple letters e.g. ab or bc in this format)", new String[]{"1", "0", "Can't divide by zero"}, "bc",
+        questions.add(new Question("What is 5 / 0 ? \n(Choose one letter)", new String[]{"1", "0", "Can't divide by zero"}, "c",
                 QuestionType.MULTIPLE_CHOICE));
         questions.add(new Question("What is 3 * 20 ? \n(Free text, answer in number(s))", null, "60",
                 QuestionType.FREE_TEXT));
