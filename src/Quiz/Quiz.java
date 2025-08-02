@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class Quiz {
 
-
     private String nameOfQuiz;
     private List<Question> questions;
     private Scanner scanner;
@@ -18,17 +17,9 @@ public class Quiz {
         this.scanner = scanner;
     }
 
-    // vypíše otázky
-    public void printQuestion() {
-        for (int i = 0; i < questions.size(); i++) {
-            System.out.println("Question " + (i + 1) + ". ");
-            questions.get(i).printQuestionInfo();
-            System.out.println();
-        }
-    }
     // odpověď a kontrola správnosti
     public int answerAndCheck() {
-
+        System.out.println("Starting quiz: " + nameOfQuiz);
         int score = 0;
 
         for (int i = 0; i < questions.size();i++) {
