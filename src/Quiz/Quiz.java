@@ -25,7 +25,7 @@ public class Quiz {
         for (int i = 0; i < questions.size();i++) {
             Question currentQuestion = questions.get(i);
             System.out.println("Question " + (i+1));
-            currentQuestion.printQuestionInfo();
+            currentQuestion.printQuestion();
 
             System.out.println("What is your answer? ");
             String userAnswer = scanner.nextLine();
@@ -35,7 +35,7 @@ public class Quiz {
                 score++;
 
             } else {
-                System.out.println("Wrong! The correct answer is: " + currentQuestion.getCorrectAnswer());
+                System.out.println("Wrong!");
             }
             System.out.println("Your actual score is: " + score + (score == 1 ? " point" : " points"));
             System.out.println();

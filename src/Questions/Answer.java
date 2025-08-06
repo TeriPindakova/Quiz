@@ -1,43 +1,19 @@
 package Questions;
 
 public class Answer {
-    private String correctAnswer;
-    private QuestionType type;
+    private String title;
+    private boolean isCorrect;
 
-    public Answer(String correctAnswer, QuestionType type) {
-        this.correctAnswer = correctAnswer;
-        this.type = type;
+    public Answer(String title, boolean isCorrect) {
+        this.title = title;
+        this.isCorrect = isCorrect;
     }
 
-// ověření correctAnswer
-    public boolean checkAnswer (String userAnswer) {
-        if (type == QuestionType.FREE_TEXT || type == QuestionType.SINGLE_CHOICE) {
-            return userAnswer.trim().equalsIgnoreCase(correctAnswer.trim());
-        }
-
-        if (type == QuestionType.MULTIPLE_CHOICE) {
-            String cleanedUserAnswer = userAnswer.toLowerCase().replaceAll("\\s+", "");
-            String cleanedCorrect = correctAnswer.toLowerCase().replaceAll("\\s+", "");
-
-            for (int i = 0; i < cleanedCorrect.length(); i++) {
-                char c = cleanedCorrect.charAt(i);
-                if (!cleanedUserAnswer.contains(String.valueOf(c))) {
-                    return false;
-                }
-            }
-            return cleanedUserAnswer.length() == cleanedCorrect.length();
-        }
-        return false;
+    public String getTitle() {
+        return title;
     }
 
-// vrátí correct answer
-    public String getCorrectAnswer() {
-        return correctAnswer;
+    public boolean isCorrect() {
+        return isCorrect;
     }
 }
-
-
-/*
-, ale iba v podsatte
-questionType, questionText a List<Answer> by malo stacit..
- */
